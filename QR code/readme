@@ -1,0 +1,51 @@
+# 二维码制作，主要：带图片的艺术二维码（黑白与彩色）、动态二维码（黑白与彩色）
+https://blog.csdn.net/xiao_yi_xiao/article/details/103802204
+
+二维码在线制作网址：https://cli.im/
+
+qrcode【myqr】运行在 Python 3 版本上，它可以玩出很多花样。
+例如能生成以下三种二维码图片：普通二维码、带图片的艺术二维码（黑白与彩色）、
+动态二维码（黑白与彩色）。它比较适合直接用于生成二维码图片的场景。
+GitHub地址：https://github.com/sylnsfar/qrcode
+
+# 逐一安装需要的模块
+pip install pillow
+pip install numpy
+pip install imageio
+pip install myqr
+
+
+《使用手册》
+一 普通二维码
+    #1 最简单
+    myqr "i love you"
+
+    #2 参数-n, -d
+    myqr "i love you" -n love.jpg -d /Users/yyl/PycharmProjects/play-python/QR code/
+    # 默认输出文件名是“ qrcode.png "，而默认存储位置是当前目录。
+    #-n 控制文件名，格式可以是 .jpg， .png ，.bmp ，.gif。
+    #-d 控制位置。
+
+二 艺术二维码
+    #1 -p
+    myqr https://github.com -p github.jpg
+    # 参数-p 用来将QR二维码图像与一张同目录下的图片相结合，产生一张黑白图片。
+
+    #2 -c
+    myqr https://github.com -p github.jpg -c
+    # 加上参数 -c 可以使产生的图片由黑白变为彩色的。
+
+    #3 -con, -bri
+    myqr https://github.com -p github.jpg [-c] -con 1.5 -bri 1.6
+    # 参数-con 用以调节图片的对比度，1.0 表示原始图片，更小的值表示更低对比度，更大反之。默认为1.0。
+    # 参数 -bri 用来调节图片的亮度，其余用法和取值与 -con 相同。
+
+
+三 动态GIF二维码
+    # 动态二维码与上述的带图片的二维码的生成方法没什么区别，
+    # 你只要采用 .gif 格式的图片即可生成黑白或者彩色的动态二维码。
+    # 但注意如果使用了 -n 参数自定义输出的文件名，切记其格式也必须是 .gif 格式。
+
+
+
+请采用正方形或近似正方形的图片！！！
